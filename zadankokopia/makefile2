@@ -1,0 +1,25 @@
+#Prosty makefile, ale dziala git
+
+objects=konturowanie.o negatyw.o progowanie.o rozciaganie.o rozmywanie_poziome.o wyswietl.o zmiana_poziomow.o zapisz.o main.o
+CC = gcc
+all: $(objects)
+	$(CC) $(objects) -o run 
+
+konturowanie.o: konturowanie.c konturowanie.h
+	$(CC) -c konturowanie.c -c -o konturowanie.o
+negatyw.o: negatyw.c negatyw.h
+	$(CC) -c negatyw.c -c -o negatyw.o
+progowanie.o: progowanie.c progowanie.h
+	$(CC) -c progowanie.c -c -o progowanie.o
+rozciaganie.o: rozciaganie.c rozciaganie.h
+	$(CC) -c rozciaganie.c -c -o rozciaganie.o
+rozmywanie_poziome.o: rozmywanie_poziome.c rozmywanie_poziome.h
+	$(CC) -c rozmywanie_poziome.c -c -o rozmywanie_poziome.o
+wyswietl.o: wyswietl.c wyswietl.h
+	$(CC) -c wyswietl.c -c -o wyswietl.o
+zmiana_poziomow.o: zmiana_poziomow.c zmiana_poziomow.h
+	$(CC) -c zmiana_poziomow.c -c -o zmiana_poziomow.o
+zapisz.o: zapisz.c zapisz.h
+	$(CC) -c zapisz.c -c -o zapisz.o
+clean:
+	rm *.o run
